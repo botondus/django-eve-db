@@ -70,6 +70,7 @@ admin.site.register(InvContrabandType, InvContrabandTypeAdmin)
 
 class InvBlueprintTypeAdmin(admin.ModelAdmin):
     list_display = ('blueprint_type', 'product_type', 'tech_level')
+    raw_id_fields = ('blueprint_type', 'product_type', 'parent_blueprint_type')
 admin.site.register(InvBlueprintType, InvBlueprintTypeAdmin)
 
 class RamActivityAdmin(admin.ModelAdmin):
@@ -158,6 +159,7 @@ admin.site.register(DgmAttributeType, DgmAttributeTypeAdmin)
 
 class DgmTypeAttributeAdmin(admin.ModelAdmin):
     list_display = ('inventory_type', 'attribute', 'value_int', 'value_float')
+    raw_id_fields = ('inventory_type',)
 admin.site.register(DgmTypeAttribute, DgmTypeAttributeAdmin)
 
 class EveGraphicAdmin(admin.ModelAdmin):
